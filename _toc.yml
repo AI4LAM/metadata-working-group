@@ -6,3 +6,4 @@ root: intro
 chapters:
 - file: README
 - file: '2021-05-11'
+- file: bibliography
