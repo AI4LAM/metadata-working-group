@@ -7,6 +7,9 @@ parts:
 - caption: Meetings
   chapters:
   - file: meetings/about
+  - file: meetings/2021-01-12
+  - file: meetings/2021-02-09
+  - file: meetings/2021-09-14
 - caption: Projects
   chapters:
   - file: projects/about
