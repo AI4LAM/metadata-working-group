@@ -7,6 +7,7 @@ parts:
 - caption: Meetings
   chapters:
   - file: meetings/about
+<<<<<<< HEAD
   - file: meetings/2023-01-10
   - file: meetings/2022-12-13
   - file: meetings/2022-10-11
@@ -35,3 +36,8 @@ parts:
 - caption: Tools
   chapters:
   - file: tools/about
+=======
+- caption: Projects
+  chapters:
+  - file: projects/about
+>>>>>>> c3ad379 (More content types, starting book organization)
