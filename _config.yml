@@ -3,7 +3,7 @@
 
 title: AI4LAM Metadata Working Group
 author: Working Group Community
-logo: logo.png
+logo: images/ai4lam-logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

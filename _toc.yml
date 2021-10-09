@@ -2,8 +2,11 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
-chapters:
-- file: README
-- file: '2021-05-11'
-- file: bibliography
+root: README
+parts:
+- caption: Meetings
+  chapters:
+  - file: meetings/about
+- caption: Projects
+  chapters:
+  - file: projects/about
