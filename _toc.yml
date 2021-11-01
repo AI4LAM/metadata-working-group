@@ -13,3 +13,9 @@ parts:
 - caption: Projects
   chapters:
   - file: projects/about
+- caption: Training
+  chapters:
+  - file: training/about
+- caption: Tools
+  chapters:
+  - file: tools/about
