@@ -33,7 +33,7 @@ marc_records = [r for r in marc_reader]
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/tmp/ipykernel_3861/1794000694.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1597/1794000694.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      8[0m [0;34m[0m[0m
 [1;32m      9[0m [0mmarc_parser[0m [0;34m=[0m [0mMarcSearchParser[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 10[0;31m [0;32mwith[0m [0mopen[0m[0;34m([0m[0;34m"data/yale-dvd-records.mrc"[0m[0;34m,[0m [0;34m"rb"[0m[0;34m)[0m [0;32mas[0m [0mfo[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
