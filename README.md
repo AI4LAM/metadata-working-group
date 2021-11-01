@@ -21,4 +21,4 @@ Our intention is allow attendees to access a shared
 [AI4LAM]: https://www.ai4lam.org
 [CHARTER]: charter.pdf
 [JB]: https://jupyter.org/
-[JBBK]: https://jupyterbook.org/s
+[JBBK]: https://jupyterbook.org/
