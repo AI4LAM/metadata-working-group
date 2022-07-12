@@ -16,6 +16,9 @@ parts:
   - file: meetings/2021-09-14
   - file: meetings/2021-10-12
   - file: meetings/2021-11-09
+  - file: meetings/2022-01-11
+  - file: meetings/2022-03-08
+  - file: meetings/2022-04-12
 - caption: Projects
   chapters:
   - file: projects/about
