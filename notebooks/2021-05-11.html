@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>AI4LAM Metadata Working Group &#8212; AI4LAM Metadata Working Group</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -119,6 +120,31 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../meetings/about.html">
    Monthly Meetings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../meetings/2023-01-10.html">
+   January 10, 2023
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../meetings/2022-12-13.html">
+   December 13, 2022
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../meetings/2022-10-11.html">
+   October 11, 2022
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../meetings/2022-09-13.html">
+   September 13, 2022
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../meetings/2022-07-12.html">
+   July 12, 2022
   </a>
  </li>
  <li class="toctree-l1">
@@ -482,9 +508,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="ai4lam-metadata-working-group">
+  <section class="tex2jax_ignore mathjax_ignore" id="ai4lam-metadata-working-group">
 <h1>AI4LAM Metadata Working Group<a class="headerlink" href="#ai4lam-metadata-working-group" title="Permalink to this headline">#</a></h1>
-<div class="section" id="may-2021">
+<section id="may-2021">
 <h2>11 May 2021<a class="headerlink" href="#may-2021" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -505,22 +531,31 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 6&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">pymarc</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">pymarcspec</span> <span class="kn">import</span> <span class="n">MarcSearchParser</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span> <span class="nn">spacy</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">marc_parser</span> <span class="o">=</span> <span class="n">MarcSearchParser</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/yale-dvd-records.mrc&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fo</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">marc_reader</span> <span class="o">=</span> <span class="n">pymarc</span><span class="o">.</span><span class="n">MARCReader</span><span class="p">(</span><span class="n">fo</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">marc_records</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">marc_reader</span><span class="p">]</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pymarcspec&#39;
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.16/x64/lib/python3.9/site-packages/IPython/core/interactiveshell.py:282,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">275</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">276</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">282</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/yale-dvd-records.mrc&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> python -m spacy download en_core_web_sm
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>spacy<span class="w"> </span>download<span class="w"> </span>en_core_web_sm
 </pre></div>
 </div>
 </div>
@@ -2454,8 +2489,8 @@ Sarah Roberts 40 42 PERSON
 </mark>
 .</div></span></div></div>
 </div>
-</div>
-<div class="section" id="approches-for-entity-matching">
+</section>
+<section id="approches-for-entity-matching">
 <h2>Approches for Entity Matching<a class="headerlink" href="#approches-for-entity-matching" title="Permalink to this headline">#</a></h2>
 <p>Controlled form verses text (unstructured) data.</p>
 <ol class="simple">
@@ -2464,8 +2499,8 @@ Sarah Roberts 40 42 PERSON
 <li><p><a class="reference external" href="https://arxiv.org/pdf/2010.00904v3.pdf">Autoregressive Entity Retrieval</a></p></li>
 <li><p><a class="reference external" href="http://nlpprogress.com/">NLP Progress</a></p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
