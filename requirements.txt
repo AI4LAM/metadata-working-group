@@ -1,0 +1,6 @@
+matplotlib
+pandas
+pymarc
+pymarcspec
+spacy
+jupyter-book
