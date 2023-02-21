@@ -29,6 +29,7 @@ parts:
   - file: projects/about
   - file: projects/folio-ml-use-cases/check-out-chat-gpt.md
   - file: projects/folio-ml-use-cases/check-out-fast-add.md
+  - file: projects/folio-ml-use-cases/catalog-chat-gpt.md
 - caption: Training
   chapters:
   - file: training/about
