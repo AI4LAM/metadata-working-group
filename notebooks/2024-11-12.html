@@ -1,0 +1,1073 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; AI4LAM Metadata Working Group</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/2024-11-12';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ai4lam-logo.png" class="logo__image only-light" alt="AI4LAM Metadata Working Group - Home"/>
+    <img src="../_static/ai4lam-logo.png" class="logo__image only-dark pst-js-only" alt="AI4LAM Metadata Working Group - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    AI4LAM Metadata Working Group
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Meetings</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../meetings/about.html">Monthly Meetings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2024-03-12.html">March 12, 2024</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2024-02-13.html">February 13, 2024</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2024-01-09.html">January 9, 2024</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2023-11-13.html">November 13, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2023-10-10.html">October 10, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2023-09-12.html">September 12, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2023-07-11.html">July 11, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2023-05-09.html">May 9, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2023-04-11.html">April 11, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2023-03-13.html">March 13, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2023-02-14.html">February 14, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2023-01-10.html">January 10, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2022-12-13.html">December 13, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2022-10-11.html">October 11, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2022-09-13.html">September 13, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2022-07-12.html">July 12, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2022-04-12.html">April 12, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2022-03-08.html">March 8, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2022-01-11.html">January 11, 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2021-11-09.html">November 9, 2021</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2021-10-12.html">October 12, 2021</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2021-09-14.html">September 14, 2021</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2021-06-08.html">June 08, 2021</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2021-05-11.html">May 11, 2021</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2021-04-13.html">April 13, 2021</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2021-03-09.html">March 9, 2021</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2021-02-09.html">February 9, 2021</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meetings/2021-01-12.html">January 12, 2021</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../projects/about.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/folio-ml-use-cases/check-out-chat-gpt.html">ChatGPT-based Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/folio-ml-use-cases/check-out-fast-add.html">FOLIO ML Use Case - Checkout Fast Add Record</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/folio-ml-use-cases/catalog-chat-gpt.html">Catalog a FOLIO JSON Instance for the book Pride and Prejudice by Jane Austin</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../training/about.html">Courses, Training, and Learning Resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/about.html">Tools for Machine Learning and Artificial Intelligence</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/AI4LAM/metadata-working-group" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/AI4LAM/metadata-working-group/issues/new?title=Issue%20on%20page%20%2Fnotebooks/2024-11-12.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/2024-11-12.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymarc</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">open_ai</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pymarc</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">open_ai</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">))</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;openai&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ocn999379620.mrc&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fo</span><span class="p">:</span>
+    <span class="n">marc_records</span> <span class="o">=</span> <span class="p">[</span><span class="n">rec</span> <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="n">pymarc</span><span class="o">.</span><span class="n">MARCReader</span><span class="p">(</span><span class="n">fo</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">marc_records</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">marc_records</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=LDR  01196cam a2200361Mi 4500
+=001  ocn999379620
+=003  OCoLC
+=005  20230925021221.0
+=008  160725s2016\\\\enka\\\\\b\\\\000\0\eng\d
+=040  \\$aUKTTE$beng$cUKTTE$dOCLCQ
+=019  \\$a994235819
+=020  \\$a9780993475542
+=020  \\$a099347554X
+=035  \\$a(OCoLC)999379620$z(OCoLC)994235819
+=080  \\$aLI
+=049  \\$aSTFA
+=245  00$aLi Huasheng :$bthe meditation room.
+=246  30$aMeditation room
+=260  \\$aLondon :$bMayor Gallery,$c2016.
+=300  \\$a54 pages :$billustrations (some color) ;$c21 x 26 cm +$e1 loose sheet
+=336  \\$atext$btxt$2rdacontent
+=337  \\$aunmediated$bn$2rdamedia
+=338  \\$avolume$bnc$2rdacarrier
+=500  \\$aBiog. ; exhibs. ; colls.
+=500  \\$aIntroduction by Nataline Colonnello.
+=500  \\$aIncludes price list.
+=500  \\$aPublished in an edition of 500 copies.
+=504  \\$aIncludes bibliographical references.
+=518  \\$aPublished on the occasion of the exhibition held at the Mayor Gallery, London, 2 June - 28 July 2016.
+=600  14$aLi, Huasheng,$d1944-
+=700  1\$aColonnello, Nataline.
+=710  2\$aMayor Gallery (London)
+=994  \\$aC0$bSTF
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chat_completion</span> <span class="o">=</span> <span class="n">open_ai</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;How would I extract a 245 MARC field from a record using pymarc?&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chat_completion</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ChatCompletion(id=&#39;chatcmpl-ASnrgP1lBtQo96wR0HzZBYa465bxP&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#39;To extract a 245 MARC field from a record using the `pymarc` library in Python, you first need to parse the MARC record and then access that specific field. Here\&#39;s a step-by-step guide on how to do it:\n\n1. **Install `pymarc`:** If you haven\&#39;t already installed pymarc, you can do so using pip:\n   ```bash\n   pip install pymarc\n   ```\n\n2. **Read the MARC Record:** You’ll typically use a `MARCReader` or `parse_xml_to_array` if you are working with MARC21 or MARCXML files respectively.\n\n3. **Extract the 245 Field:** Once you have the MARC record, you can access the 245 field.\n\nHere\&#39;s a sample code demonstrating this process:\n\n```python\nfrom pymarc import MARCReader\n\n# Open the MARC file in read-binary mode\nwith open(\&#39;yourfile.mrc\&#39;, \&#39;rb\&#39;) as file:\n    reader = MARCReader(file)\n\n    # Iterate through each record\n    for record in reader:\n        # Access the 245 field\n        field_245 = record[\&#39;245\&#39;]\n        \n        # Check if the field exists\n        if field_245 is not None:\n            # Extract specific subfields (e.g., \&#39;a\&#39; for the title)\n            title = field_245[\&#39;a\&#39;]\n            subtitle = field_245[\&#39;b\&#39;] if \&#39;b\&#39; in field_245 else \&#39;\&#39;\n\n            print(f&quot;Title: {title}&quot;)\n            if subtitle:\n                print(f&quot;Subtitle: {subtitle}&quot;)\n        else:\n            print(&quot;245 field not found in this record.&quot;)\n```\n\n### Explanation:\n\n- **MARCReader:** Used to read MARC21 binary files.\n- **record[\&#39;245\&#39;]:** Accesses the 245 field if it exists.\n- **field_245[\&#39;a\&#39;] and field_245[\&#39;b\&#39;]:** Access subfields \&#39;a\&#39; (main title) and \&#39;b\&#39; (remainder of title), checking if they exist.\n\nMake sure to replace `\&#39;yourfile.mrc\&#39;` with the actual path to your MARC file.\n\nThis code snippet will extract and print the main title and subtitle (if available) of each record in the MARC file. Adjust the subfields you need based on your specific requirements.&#39;, refusal=None, role=&#39;assistant&#39;, audio=None, function_call=None, tool_calls=None))], created=1731428228, model=&#39;gpt-4o-2024-08-06&#39;, object=&#39;chat.completion&#39;, service_tier=None, system_fingerprint=&#39;fp_159d8341cc&#39;, usage=CompletionUsage(completion_tokens=472, prompt_tokens=24, total_tokens=496, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">chat_completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>To extract a 245 MARC field from a record using the `pymarc` library in Python, you first need to parse the MARC record and then access that specific field. Here&#39;s a step-by-step guide on how to do it:
+
+1. **Install `pymarc`:** If you haven&#39;t already installed pymarc, you can do so using pip:
+   ```bash
+   pip install pymarc
+   ```
+
+2. **Read the MARC Record:** You’ll typically use a `MARCReader` or `parse_xml_to_array` if you are working with MARC21 or MARCXML files respectively.
+
+3. **Extract the 245 Field:** Once you have the MARC record, you can access the 245 field.
+
+Here&#39;s a sample code demonstrating this process:
+
+```python
+from pymarc import MARCReader
+
+# Open the MARC file in read-binary mode
+with open(&#39;yourfile.mrc&#39;, &#39;rb&#39;) as file:
+    reader = MARCReader(file)
+
+    # Iterate through each record
+    for record in reader:
+        # Access the 245 field
+        field_245 = record[&#39;245&#39;]
+        
+        # Check if the field exists
+        if field_245 is not None:
+            # Extract specific subfields (e.g., &#39;a&#39; for the title)
+            title = field_245[&#39;a&#39;]
+            subtitle = field_245[&#39;b&#39;] if &#39;b&#39; in field_245 else &#39;&#39;
+
+            print(f&quot;Title: {title}&quot;)
+            if subtitle:
+                print(f&quot;Subtitle: {subtitle}&quot;)
+        else:
+            print(&quot;245 field not found in this record.&quot;)
+```
+
+### Explanation:
+
+- **MARCReader:** Used to read MARC21 binary files.
+- **record[&#39;245&#39;]:** Accesses the 245 field if it exists.
+- **field_245[&#39;a&#39;] and field_245[&#39;b&#39;]:** Access subfields &#39;a&#39; (main title) and &#39;b&#39; (remainder of title), checking if they exist.
+
+Make sure to replace `&#39;yourfile.mrc&#39;` with the actual path to your MARC file.
+
+This code snippet will extract and print the main title and subtitle (if available) of each record in the MARC file. Adjust the subfields you need based on your specific requirements.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marc_records</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;245&quot;</span><span class="p">][</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Li Huasheng :&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">create_marc_record</span> <span class="o">=</span> <span class="n">open_ai</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Create a MARC 21 record with a title of Moby Dick by Herman Meville&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">create_marc_record</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating a MARC 21 record involves using a standardized format for the description and cataloging of items in a library catalog. Below is an example of a simplified MARC 21 bibliographic record for *Moby Dick* by Herman Melville.
+
+```
+=LDR  00000cam a2200000 a 4500
+=001  000000001
+=005  20231010123000.0
+=008  231010s1851    mau           000 1 eng  
+=020  \\$a1234567890
+=040  \\$aYourLibraryCode$beng$cYourLibraryCode
+=041  0\$aeng
+=100  1\$aMelville, Herman,$d1819-1891.
+=245  10$aMoby Dick /$cby Herman Melville.
+=260  \\$aBoston :$bHarper &amp; Brothers,$c1851.
+=300  \\$axx, 635 p. ;$c21 cm.
+=336  \\$atext$btxt$2rdacontent
+=337  \\$aunmediated$bn$2rdamedia
+=338  \\$avolume$bnc$2rdacarrier
+=500  \\$aOriginally published in 1851.
+=520  \\$aAn allegorical novel about the voyage of the whaling ship Pequod and its captain, Ahab, who is intent on pursuing the giant white whale Moby Dick.
+=650  \0$aWhaling ships$vFiction.
+=650  \0$aSea stories.
+=650  \0$aWhales$vFiction.
+=700  1\$aMelville, Herman,$d1819-1891.
+=852  \\$aYour Library Location
+```
+
+### Explanation of some fields:
+- **LDR (Leader):** Holds information for processing the record.
+- **001:** Control number assigned by the institution.
+- **005:** Date and time of the latest transaction.
+- **008:** Fixed-length data elements, include date of publication, language, etc.
+- **020:** ISBN (if applicable, otherwise can be omitted or replaced with an alternate identifier).
+- **040:** Cataloging source, consists of library code and language of cataloging.
+- **041:** Language code.
+- **100:** Main entry - Personal name (author).
+- **245:** Title statement.
+- **260:** Publication information.
+- **300:** Physical description of the item.
+- **336, 337, 338:** RDA content, media, and carrier types.
+- **500:** General note, here noting the original publication year.
+- **520:** Summary or abstract of the work.
+- **650:** Subject added entry - Topical term.
+- **700:** Added entry for author (used if there is a collaboration, editors, etc., not necessary here, repeated in error).
+- **852:** Location information in the library.
+
+This example is a basic outline and may need adjustments based on library-specific practices or cataloging rules.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csv_string</span> <span class="o">=</span> <span class="s2">&quot;Title,Author,Copyright</span><span class="se">\n</span><span class="s2">Pride and Prejudice,Jane Austen,1818</span><span class="se">\n</span><span class="s2">Moby Dick,Herman Meville,1851</span><span class="se">\n</span><span class="s2">Adventure of Tom Sawyer,Mark Twain,1876&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">csv_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Title,Author,Copyright
+Pride and Prejudice,Jane Austen,1818
+Moby Dick,Herman Meville,1851
+Adventure of Tom Sawyer,Mark Twain,1876
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">create_marc_records</span> <span class="o">=</span> <span class="n">open_ai</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Create a MARC 21 record for each in this CSV file:</span><span class="se">\n</span><span class="si">{</span><span class="n">csv_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">create_marc_records</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating MARC 21 records involves formatting bibliographic data into fields and subfields according to the MARC standard. Below, you&#39;ll find MARC 21 records for each of the entries provided in the CSV file.
+
+### Record for &quot;Pride and Prejudice&quot; by Jane Austen
+
+```
+=LDR  00000nam a2200000 a 4500
+=245 10$aPride and Prejudice /$cJane Austen.
+=100 1\$aAusten, Jane.
+=260  \\$c1818.
+=300  \\$apages cm.
+```
+
+### Record for &quot;Moby Dick&quot; by Herman Melville
+
+```
+=LDR  00000nam a2200000 a 4500
+=245 10$aMoby Dick /$cHerman Melville.
+=100 1\$aMelville, Herman.
+=260  \\$c1851.
+=300  \\$apages cm.
+```
+
+### Record for &quot;Adventure of Tom Sawyer&quot; by Mark Twain
+
+```
+=LDR  00000nam a2200000 a 4500
+=245 10$aAdventure of Tom Sawyer /$cMark Twain.
+=100 1\$aTwain, Mark.
+=260  \\$c1876.
+=300  \\$apages cm.
+```
+
+### Explanation:
+
+- `LDR` (Leader): This is a mandatory field that provides information for the processing of the record. The values are placeholders and should be replaced with appropriate values by library systems.
+- `245` (Title Statement): Contains the title and the statement of responsibility (author).
+  - `$a`: Title.
+  - `$c`: Statement of responsibility (author).
+- `100` (Main Entry—Personal Name): Provides the name of the author. 
+  - The last number `1\` indicates main entry.
+  - `\$a`: Personal name.
+- `260` (Publication, Distribution, etc.):
+  - `\$c`: Date of publication.
+- `300` (Physical Description): This field is typically used to describe the extent and dimensions. Here, &quot;pages cm&quot; is a placeholder for actual pagination which should be filled per the specific edition&#39;s details.
+
+Note: In a real library system, each of these records might include additional fields such as publisher information, ISBNs (if applicable for newer editions), subjects, and other metadata necessary for library cataloging.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">create_marc_records</span> <span class="o">=</span> <span class="n">open_ai</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Create a MARC 21 record with ordered fields for each row in this CSV file:</span><span class="se">\n</span><span class="si">{</span><span class="n">csv_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">create_marc_records</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Below are the MARC 21 records for each of the entries from the CSV file. In a MARC 21 record, the fields are typically ordered using tags such as 100 for the author, 245 for the title, and 260 for publication details (in this case, using &#39;c&#39; for copyright year).
+
+Record 1:
+```
+=100 1\$aAusten, Jane.
+=245 10$aPride and Prejudice /$cJane Austen.
+=260  \\\$cc1818.
+```
+
+Record 2:
+```
+=100 1\$aMelville, Herman.
+=245 10$aMoby Dick /$cHerman Melville.
+=260  \\\$cc1851.
+```
+
+Record 3:
+```
+=100 1\$aTwain, Mark.
+=245 10$aAdventure of Tom Sawyer /$cMark Twain.
+=260  \\\$cc1876.
+```
+
+Explanation of MARC fields:
+- `100`: Main Entry—Personal Name, showing the primary responsibility (author) for the work.
+- `245`: Title Statement, where the title and statement of responsibility (author&#39;s name) are provided.
+- `260`: Publication, Distribution, etc., providing information related to the publication, including the copyright date (represented with subfield `$c`).
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spanish_marc_record</span> <span class="o">=</span> <span class="n">open_ai</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Create a MARC 21 record for book Cien años de soledad&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">spanish_marc_record</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating a MARC 21 record for a book involves capturing bibliographic information in a standardized format used by libraries. Below is a simplified example of a MARC 21 record for &quot;Cien años de soledad&quot; by Gabriel García Márquez. Note that real MARC records may include additional fields based on the library&#39;s cataloging standards and specific edition details.
+
+```plaintext
+LDR  00000nam  2200000 a 4500
+001    123456789
+005    20231025120000.0
+008    991001s1967    xx            000 1 spa d
+010    ##$a 12345678
+020    ##$a 9780307474728
+040    ##$a DLC$b eng$c DLC
+100 1#$a García Márquez, Gabriel,$d 1927-2014.
+240 10$a Cien años de soledad.
+245 10$a Cien años de soledad /$c Gabriel García Márquez.
+250    $a Primera edición.
+260    $a Buenos Aires :$b Editorial Sudamericana,$c 1967.
+300    $a 471 p. ;$c 21 cm.
+490 1#$a Primera edición ;$v 1
+500    $a &quot;Premio Nobel de Literatura, 1982.&quot;
+500    $a &quot;Cien años de soledad fue publicada en 1967.&quot;
+520    $a La historia de la familia Buendía, situada en el pueblo ficticio de Macondo.
+650 #0$a Magic realism (Literature)
+650 #0$a Buendía, José Arcadio (Fictitious character)$v Fiction.
+650 #0$a Macondo (Imaginary place)$v Fiction.
+830  0$a Primera edición ;$v 1
+856 42$3Contributor biographical information$u http://www.linktobiography.com
+856 42$3Publisher description$u http://www.linktopublisherdescription.com
+```
+
+### Field Breakdown:
+- **LDR (Leader):** Indicates the type of material and bibliographic level.
+- **001:** Control number (unique identifier for the record).
+- **005:** Date and time of latest transaction.
+- **008:** Fixed length data elements (publication date, language, etc.).
+- **010:** Library of Congress Control Number (LCCN).
+- **020:** ISBN.
+- **040:** Cataloging source.
+- **100:** Main entry (personal name – author).
+- **240:** Uniform Title.
+- **245:** Title statement (includes the title and statement of responsibility).
+- **250:** Edition statement.
+- **260:** Publication information.
+- **300:** Physical description.
+- **490/830:** Series statement and information.
+- **500:** General notes.
+- **520:** Summary note.
+- **650:** Subject added entry – topical term.
+- **856:** Electronic location and access, if applicable.
+
+Note: Specific details (such as URLs in field 856) and field contents may vary based on the specific library system and edition of the book being cataloged. Also, some fields may not be used for all types of records or may have different configurations in a live setting.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marc_record</span> <span class="o">=</span> <span class="n">open_ai</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Create a MARC 21 record for book Two hundred años de soledad&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">marc_record</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Certainly! The MARC 21 format is a standard for the representation and communication of bibliographic and related information in machine-readable form. Below is a MARC 21 record example for a fictional book titled &quot;Two Hundred Años de Soledad&quot; (a play on Gabriel García Márquez&#39;s &quot;One Hundred Years of Solitude&quot;, assuming it&#39;s a similar work in terms of bibliographic elements).
+
+```plaintext
+=Leader  00000nam a2200000 i 4500
+=001     123456789
+=005     20231012120000.0
+=008     231012s2023    xxu           000 1 spa d
+=020    \\$a9781234567890
+=040    \\$aXYZ$cXYZ$eIFN
+=041  1 \$aspa$heng
+=100  1\$aDoe, Juan.
+=245  10$aTwo hundred años de soledad /$cJuan Doe.
+=246  3\$a200 años de soledad
+=250    \$aPrimera edición.
+=260    \$aCiudad Inexistente :$bEditorial Fantasía,$c2023.
+=300    \$a350 páginas ;$c23 cm.
+=336    \$atexto$btxt$2rdacontent
+=337    \$asin mediado$bn$2rdamedia
+=338    \$avolumen$bnc$2rdacarrier
+=500    \\$aObra de ficción.
+=504    \\$aIncluye referencias bibliográficas.
+=520    \\$aEsta novela narra la historia de la familia ficticia y sus encuentros mágicos en el pueblo de Macondo a lo largo de doscientos años.
+=650  \0$aFicción mágica.
+=650  \0$aLiteratura hispanoamericana.
+=700  1\$aPérez, María,$etraductor.
+=852  \\$aBiblioteca de Ejemplo
+```
+
+**Notes:**
+
+- Fields `100`, `245`, `250`, `260`, etc., represent different parts of the bibliographic description. For example:
+  - `100` is the main author.
+  - `245` is the title statement.
+  - `260` is the publication information.
+  - `650` is the subject heading.
+- The content in fields `a`, `b`, `c`, etc., represents subfields which contain specific pieces of information.
+- This record is an example and assumes fictional details (e.g., author name &quot;Juan Doe&quot;, publisher &quot;Editorial Fantasía&quot;). You should replace them with actual bibliographic information as needed.
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Working Group Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
