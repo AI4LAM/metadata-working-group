@@ -16,20 +16,23 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 import os
+import time
 
 import httpx
-import openai
 import pandas as pd
+
+from openai import OpenAI
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 3[0m
+Cell [0;32mIn[1], line 4[0m
 [1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mos[39;00m
-[0;32m----> 3[0m [38;5;28;01mimport[39;00m [38;5;21;01mhttpx[39;00m
-[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mopenai[39;00m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mtime[39;00m
+[0;32m----> 4[0m [38;5;28;01mimport[39;00m [38;5;21;01mhttpx[39;00m
 [1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+[1;32m      7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mopenai[39;00m [38;5;28;01mimport[39;00m OpenAI
 
 [0;31mModuleNotFoundError[0m: No module named 'httpx'
 

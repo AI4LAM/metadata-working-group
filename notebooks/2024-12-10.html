@@ -421,21 +421,24 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
 <span class="kn">import</span> <span class="nn">httpx</span>
-<span class="kn">import</span> <span class="nn">openai</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">httpx</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">openai</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">time</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">httpx</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;httpx&#39;
 </pre></div>
@@ -444,16 +447,14 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">OpenAI</span><span class="p">(</span>
-    <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">)</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">citations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/citations.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">citations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/2024-12-10-citations.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -461,6 +462,541 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">citations</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Authors</th>
+      <th>Title</th>
+      <th>Publication</th>
+      <th>Volume</th>
+      <th>Number</th>
+      <th>Pages</th>
+      <th>Year</th>
+      <th>Publisher</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Gaizauskas, Robert; Wilks, Yorick;</td>
+      <td>Information extraction: Beyond document retrieval</td>
+      <td>Journal of documentation</td>
+      <td>54.0</td>
+      <td>1.0</td>
+      <td>70-105</td>
+      <td>1998</td>
+      <td>MCB UP Ltd</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Morgan, Paul;</td>
+      <td>Hypertext and the literary document</td>
+      <td>Journal of documentation</td>
+      <td>47.0</td>
+      <td>4.0</td>
+      <td>373-388</td>
+      <td>1991</td>
+      <td>MCB UP Ltd</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Kircz, Joost G;</td>
+      <td>Modularity: the next form of scientific inform...</td>
+      <td>Journal of documentation</td>
+      <td>54.0</td>
+      <td>2.0</td>
+      <td>210-235</td>
+      <td>1998</td>
+      <td>MCB UP Ltd</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Farrow, John F;</td>
+      <td>A cognitive process model of document indexing</td>
+      <td>Journal of documentation</td>
+      <td>47.0</td>
+      <td>2.0</td>
+      <td>149-166</td>
+      <td>1991</td>
+      <td>MCB UP Ltd</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Heery, Rachel;</td>
+      <td>Review of metadata formats</td>
+      <td>Program</td>
+      <td>30.0</td>
+      <td>4.0</td>
+      <td>345-373</td>
+      <td>1996</td>
+      <td>MCB UP Ltd</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Burnett, Kathleen; Ng, Kwong Bor; Park, Soyeon;</td>
+      <td>A comparison of the two traditions of metadata...</td>
+      <td>Journal of the American Society for Informatio...</td>
+      <td>50.0</td>
+      <td>13.0</td>
+      <td>1209-1217</td>
+      <td>1999</td>
+      <td>Wiley Online Library</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Weibel, Stuart; Godby, Jean; Miller, Eric; Dan...</td>
+      <td>OCLC/NCSA metadata workshop report</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1995</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Schenkman, Bo N; Jönsson, Fredrik U;</td>
+      <td>Aesthetics and preferences of web pages</td>
+      <td>Behaviour &amp; information technology</td>
+      <td>19.0</td>
+      <td>5.0</td>
+      <td>367-377</td>
+      <td>2000</td>
+      <td>Taylor &amp; Francis</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Lakoff, George;</td>
+      <td>Explaining embodied cognition results</td>
+      <td>Topics in cognitive science</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>773-785</td>
+      <td>2012</td>
+      <td>Wiley Online Library</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>McManus, I Chris; Wu, Wen;</td>
+      <td>“The square is… bulky, heavy, contented, plain...</td>
+      <td>Psychology of Aesthetics, Creativity, and the ...</td>
+      <td>7.0</td>
+      <td>2.0</td>
+      <td>130</td>
+      <td>2013</td>
+      <td>Educational Publishing Foundation</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Lakoff, George; Johnson, Mark;</td>
+      <td>The metaphorical structure of the human concep...</td>
+      <td>Cognitive science</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>195-208</td>
+      <td>1980</td>
+      <td>No longer published by Elsevier</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Furuta, Richard; Stotts, P David;</td>
+      <td>Specifying structured document transformations</td>
+      <td>Document Manipulation and typography</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>109-120</td>
+      <td>1988</td>
+      <td>Cambridge University Press Cambridge</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chat_completion</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;From the following row in a csv, create Wikidata Quickstatements:</span><span class="se">\n</span><span class="s2">Authors 	Title 	Publication 	Volume 	Number 	Pages 	Year 	Publisher</span>
+<span class="s2">0 	Gaizauskas, Robert; Wilks, Yorick; 	Information extraction: Beyond document retrieval 	Journal of documentation 	54.0 	1.0 	70-105 	1998 	MCB UP Ltd&quot;&quot;&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">chat_completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>To create Wikidata Quickstatements for the given row of data, we need to map the information to the appropriate properties used in Wikidata. I&#39;ll write the Quickstatements using the column data provided:
+
+1. Author: `Gaizauskas, Robert`
+2. Author: `Wilks, Yorick`
+3. Title: `Information extraction: Beyond document retrieval`
+4. Publication: `Journal of documentation`
+5. Volume: `54`
+6. Number: `1`
+7. Pages: `70-105`
+8. Year: `1998`
+9. Publisher: `MCB UP Ltd`
+
+Quickstatements:
+
+```
+CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;Information extraction: Beyond document retrieval&quot;
+LAST|P2093|&quot;Gaizauskas, Robert&quot;
+LAST|P2093|&quot;Wilks, Yorick&quot;
+LAST|P1433|Q15716944
+LAST|P478|&quot;54&quot;
+LAST|P433|&quot;1&quot;
+LAST|P304|&quot;70-105&quot;
+LAST|P577|+1998-00-00T00:00:00Z/9
+LAST|P123|Q17929746
+```
+
+Here&#39;s what individual parts of the above Quickstatements mean:
+
+- `P31|Q13442814` specifies that this item is a &quot;scholarly article.&quot;
+- `P1476|en:&quot;Information extraction: Beyond document retrieval&quot;` specifies the title of the work.
+- `P2093|&quot;Gaizauskas, Robert&quot;` and `P2093|&quot;Wilks, Yorick&quot;` specifies the authors as string values since they might not have specific Wikidata entries.
+- `P1433|Q15716944` links the work to the journal &quot;Journal of documentation.&quot; However, you may need to verify the exact Wikidata item for this journal as this ID might be hypothetical.
+- `P478|&quot;54&quot;` specifies the volume number.
+- `P433|&quot;1&quot;` specifies the issue number.
+- `P304|&quot;70-105&quot;` specifies the page range.
+- `P577|+1998-00-00T00:00:00Z/9` specifies the publication date.
+- `P123|Q17929746` relates the article with the publisher &quot;MCB UP Ltd.&quot; Like the journal, this also requires verification of the actual Wikidata entry.
+
+Please ensure to replace `Q15716944` and `Q17929746` with the correct Wikidata item IDs for &quot;Journal of documentation&quot; and &quot;MCB UP Ltd&quot; if they exist or create them if needed.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_wikidata</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Search for a name in Wikidata and return the Q code if found.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.wikidata.org/w/api.php&quot;</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;wbsearchentities&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;search&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+        <span class="s2">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">1</span>  <span class="c1"># Limit to one result for simplicity</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;search&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">if</span> <span class="n">results</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>  <span class="c1"># Return the Q-code (e.g., Q12345)</span>
+    <span class="k">return</span> <span class="kc">None</span>  <span class="c1"># Return None if not found</span>
+
+
+<span class="k">def</span> <span class="nf">create_quickstatements_with_qcodes</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="n">statements</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># Create a new item for the article</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;CREATE</span><span class="se">\n</span><span class="s1">&#39;</span>
+    <span class="n">item</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;LAST|P31|Q13442814</span><span class="se">\n</span><span class="s1">&#39;</span>  <span class="c1"># Instance of: scholarly article</span>
+    <span class="n">item</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;LAST|P1476|en:&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Title&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot;</span><span class="se">\n</span><span class="s1">&#39;</span>  <span class="c1"># Title</span>
+    <span class="n">item</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;LAST|P577|+</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">-00-00T00:00:00Z/9</span><span class="se">\n</span><span class="s1">&#39;</span>  <span class="c1"># Publication date</span>
+    
+    <span class="c1"># Authors</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Authors&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;; &#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">author</span> <span class="ow">in</span> <span class="n">authors</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">author</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>  <span class="c1"># Check if the author field is not empty</span>
+            <span class="c1"># Adjust author name format to &quot;First Last&quot; instead of &quot;Last, First&quot;</span>
+            <span class="k">if</span> <span class="s1">&#39;,&#39;</span> <span class="ow">in</span> <span class="n">author</span><span class="p">:</span>
+                <span class="n">last_name</span><span class="p">,</span> <span class="n">first_name</span> <span class="o">=</span> <span class="n">author</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+                <span class="n">author_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">last_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">author_name</span> <span class="o">=</span> <span class="n">author</span>  <span class="c1"># No comma, assume name is already in correct format</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">author_name</span><span class="p">)</span>
+            <span class="n">qcode</span> <span class="o">=</span> <span class="n">search_wikidata</span><span class="p">(</span><span class="n">author_name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">qcode</span><span class="p">:</span>
+                <span class="n">item</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;LAST|P50|</span><span class="si">{</span><span class="n">qcode</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>  <span class="c1"># Author (linked to Wikidata Q code)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">item</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;LAST|P2093|&quot;</span><span class="si">{</span><span class="n">author_name</span><span class="si">}</span><span class="s1">&quot;</span><span class="se">\n</span><span class="s1">&#39;</span>  <span class="c1"># Author name string if no Q code</span>
+    
+    <span class="c1"># Journal</span>
+    <span class="n">publication_qcode</span> <span class="o">=</span> <span class="n">search_wikidata</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Publication&quot;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">publication_qcode</span><span class="p">:</span>
+        <span class="n">publication_qcode</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Publication&quot;</span><span class="p">]</span>
+    <span class="n">item</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;LAST|P1433|</span><span class="si">{</span><span class="n">publication_qcode</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>  <span class="c1"># Published in</span>
+    <span class="n">item</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;LAST|P478|&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Volume&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot;</span><span class="se">\n</span><span class="s1">&#39;</span>  <span class="c1"># Volume</span>
+    <span class="n">item</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;LAST|P433|&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Number&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot;</span><span class="se">\n</span><span class="s1">&#39;</span>  <span class="c1"># Issue</span>
+    
+    <span class="c1"># Pages</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Pages&#39;</span><span class="p">]):</span>
+        <span class="n">item</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;LAST|P304|&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Pages&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot;</span><span class="se">\n</span><span class="s1">&#39;</span>  <span class="c1"># Pages</span>
+    
+    <span class="c1"># Publisher</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Publisher&#39;</span><span class="p">])</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Publisher&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="n">qcode</span> <span class="o">=</span> <span class="n">search_wikidata</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Publisher&#39;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">qcode</span><span class="p">:</span>
+            <span class="n">item</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;LAST|P123|</span><span class="si">{</span><span class="n">qcode</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>  <span class="c1"># Publisher (linked to Wikidata Q code)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">item</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;LAST|P123|&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Publisher&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&quot;</span><span class="se">\n</span><span class="s1">&#39;</span>  <span class="c1"># Publisher name string</span>
+    
+    <span class="n">statements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">statements</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">search_wikidata</span><span class="p">(</span><span class="s2">&quot;Yorick Wilks&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Q4470008&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qcode</span> <span class="o">=</span> <span class="n">search_wikidata</span><span class="p">(</span><span class="s2">&quot;Robert Gaizauskas&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qcode</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Q58329735&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quickstatements_with_qcodes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">citations</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">quickstatements_with_qcodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_quickstatements_with_qcodes</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Add a delay to avoid overwhelming the Wikidata API</span>
+
+<span class="c1"># Combine all statements and save to a file</span>
+<span class="n">quickstatements_output_with_qcodes</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">quickstatements_with_qcodes</span><span class="p">)</span>
+<span class="n">output_file_with_qcodes</span> <span class="o">=</span> <span class="s1">&#39;../data/2024-12-10-quickstatements_with_qcodes.txt&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file_with_qcodes</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">quickstatements_output_with_qcodes</span><span class="p">)</span>
+
+<span class="n">output_file_with_qcodes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Robert Gaizauskas
+Yorick Wilks
+Paul Morgan
+Joost G Kircz
+John F Farrow
+Rachel Heery
+Kathleen Burnett
+Kwong Bor Ng
+Soyeon Park
+Stuart Weibel
+Jean Godby
+Eric Miller
+Ron Daniel
+Bo N Schenkman
+Fredrik U Jönsson
+George Lakoff
+I Chris McManus
+Wen Wu
+George Lakoff
+Mark Johnson
+Richard Furuta
+P David Stotts
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;../data/2024-12-10-quickstatements_with_qcodes.txt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">quickstatements_with_qcodes</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;Information extraction: Beyond document retrieval&quot;
+LAST|P577|+1998-00-00T00:00:00Z/9
+LAST|P50|Q58329735
+LAST|P50|Q4470008
+LAST|P1433|Q6295097
+LAST|P478|&quot;54.0&quot;
+LAST|P433|&quot;1.0&quot;
+LAST|P304|&quot;70-105&quot;
+LAST|P123|&quot;MCB UP Ltd&quot;
+
+CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;Hypertext and the literary document&quot;
+LAST|P577|+1991-00-00T00:00:00Z/9
+LAST|P50|Q62560226
+LAST|P1433|Q6295097
+LAST|P478|&quot;47.0&quot;
+LAST|P433|&quot;4.0&quot;
+LAST|P304|&quot;373-388&quot;
+LAST|P123|&quot;MCB UP Ltd&quot;
+
+CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;Modularity: the next form of scientific information presentation?&quot;
+LAST|P577|+1998-00-00T00:00:00Z/9
+LAST|P2093|&quot;Joost G Kircz&quot;
+LAST|P1433|Q6295097
+LAST|P478|&quot;54.0&quot;
+LAST|P433|&quot;2.0&quot;
+LAST|P304|&quot;210-235&quot;
+LAST|P123|&quot;MCB UP Ltd&quot;
+
+CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;A cognitive process model of document indexing&quot;
+LAST|P577|+1991-00-00T00:00:00Z/9
+LAST|P2093|&quot;John F Farrow&quot;
+LAST|P1433|Q6295097
+LAST|P478|&quot;47.0&quot;
+LAST|P433|&quot;2.0&quot;
+LAST|P304|&quot;149-166&quot;
+LAST|P123|&quot;MCB UP Ltd&quot;
+
+CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;Review of metadata formats&quot;
+LAST|P577|+1996-00-00T00:00:00Z/9
+LAST|P2093|&quot;Rachel Heery&quot;
+LAST|P1433|Q170584
+LAST|P478|&quot;30.0&quot;
+LAST|P433|&quot;4.0&quot;
+LAST|P304|&quot;345-373&quot;
+LAST|P123|&quot;MCB UP Ltd&quot;
+
+CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;A comparison of the two traditions of metadata development&quot;
+LAST|P577|+1999-00-00T00:00:00Z/9
+LAST|P50|Q28595291
+LAST|P50|Q102420866
+LAST|P50|Q92383487
+LAST|P1433|Q152040
+LAST|P478|&quot;50.0&quot;
+LAST|P433|&quot;13.0&quot;
+LAST|P304|&quot;1209-1217&quot;
+LAST|P123|Q70631906
+
+CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;OCLC/NCSA metadata workshop report&quot;
+LAST|P577|+1995-00-00T00:00:00Z/9
+LAST|P2093|&quot;Stuart Weibel&quot;
+LAST|P2093|&quot;Jean Godby&quot;
+LAST|P50|Q51903830
+LAST|P50|Q7363671
+LAST|P1433|Q21143366
+LAST|P478|&quot;nan&quot;
+LAST|P433|&quot;nan&quot;
+
+CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;Aesthetics and preferences of web pages&quot;
+LAST|P577|+2000-00-00T00:00:00Z/9
+LAST|P2093|&quot;Bo N Schenkman&quot;
+LAST|P50|Q51946229
+LAST|P1433|Q814448
+LAST|P478|&quot;19.0&quot;
+LAST|P433|&quot;5.0&quot;
+LAST|P304|&quot;367-377&quot;
+LAST|P123|Q880582
+
+CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;Explaining embodied cognition results&quot;
+LAST|P577|+2012-00-00T00:00:00Z/9
+LAST|P50|Q313772
+LAST|P1433|Q15817100
+LAST|P478|&quot;4.0&quot;
+LAST|P433|&quot;4.0&quot;
+LAST|P304|&quot;773-785&quot;
+LAST|P123|Q70631906
+
+CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;“The square is… bulky, heavy, contented, plain, good-natured, stupid…”: A cross-cultural study of the aesthetics and meanings of rectangles.&quot;
+LAST|P577|+2013-00-00T00:00:00Z/9
+LAST|P2093|&quot;I Chris McManus&quot;
+LAST|P50|Q10919214
+LAST|P1433|Q7256405
+LAST|P478|&quot;7.0&quot;
+LAST|P433|&quot;2.0&quot;
+LAST|P304|&quot;130&quot;
+LAST|P123|&quot;Educational Publishing Foundation&quot;
+
+CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;The metaphorical structure of the human conceptual system&quot;
+LAST|P577|+1980-00-00T00:00:00Z/9
+LAST|P50|Q313772
+LAST|P50|Q1356869
+LAST|P1433|Q147638
+LAST|P478|&quot;4.0&quot;
+LAST|P433|&quot;2.0&quot;
+LAST|P304|&quot;195-208&quot;
+LAST|P123|&quot;No longer published by Elsevier&quot;
+
+CREATE
+LAST|P31|Q13442814
+LAST|P1476|en:&quot;Specifying structured document transformations&quot;
+LAST|P577|+1988-00-00T00:00:00Z/9
+LAST|P50|Q102390435
+LAST|P2093|&quot;P David Stotts&quot;
+LAST|P1433|Document Manipulation and typography
+LAST|P478|&quot;nan&quot;
+LAST|P433|&quot;nan&quot;
+LAST|P304|&quot;109-120&quot;
+LAST|P123|&quot;Cambridge University Press Cambridge&quot;
 </pre></div>
 </div>
 </div>
