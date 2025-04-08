@@ -7,6 +7,9 @@ parts:
 - caption: Meetings
   chapters:
   - file: meetings/about
+  - file: meetings/2025-04-08
+  - file: meetings/2025-02-11
+  - file: meetings/2025-01-24
   - file: meetings/2024-12-10
   - file: meetings/2024-11-12
   - file: meetings/2024-10-08
